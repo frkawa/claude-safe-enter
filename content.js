@@ -21,6 +21,9 @@ document.addEventListener(
   (e) => {
     if (e.key !== 'Enter') return;
 
+    // OFF のときは何もしない（状態は bridge.js が <html> 属性に書き出す）
+    if (document.documentElement.dataset.claudeSafeEnter === 'off') return;
+
     // IME変換中のEnterは素通し（誤送信防止の要）
     if (e.isComposing || e.keyCode === 229) return;
 
