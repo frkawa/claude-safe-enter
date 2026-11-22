@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Claude Safe Enter",
+  "version": "0.1.0",
+  "description": "claude.ai で Enter を改行に、Cmd/Ctrl+Enter を送信にする",
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    }
+  ]
+}
